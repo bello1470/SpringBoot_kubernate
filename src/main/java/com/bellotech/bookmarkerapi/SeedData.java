@@ -3,17 +3,21 @@ package com.bellotech.bookmarkerapi;
 import com.bellotech.bookmarkerapi.domain.Bookmark;
 import com.bellotech.bookmarkerapi.domain.BookmarkRepository;
 import com.bellotech.bookmarkerapi.domain.BookmarkService;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
+import java.util.stream.IntStream;
 
 @Component
 @RequiredArgsConstructor
 public class SeedData implements CommandLineRunner {
 
     private final BookmarkRepository bookmarkRepository;
+
+//    private final Faker faker;
     @Override
     public void run(String... args) throws Exception {
 
@@ -30,8 +34,13 @@ public class SeedData implements CommandLineRunner {
         bookmarkRepository.save(new Bookmark(null,"Market","https://www.onthemarket.com//",Instant.now()));
         bookmarkRepository.save(new Bookmark(null,"Home","https://www.onthemarket.com//",Instant.now()));
         bookmarkRepository.save(new Bookmark(null,"StudentHome","https://www.onthemarket.com//",Instant.now()));
+/*
+        IntStream.rangeClosed(1,50)
+                .mapToObj(i -> new Bookmark(
+                        faker.name().
+                        )
+                )
 
-
-
+*/
     }
 }
