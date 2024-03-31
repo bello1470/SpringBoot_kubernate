@@ -1,0 +1,3 @@
+--INSERT INTO bookmarks (title, url, createdAt) VALUES
+--('RightMove','https://www.rightmove.co.uk/property-to-rent',CURRENT_TIMESTAMP),
+--('KateAndHomes','https://kateandtoms.com/', CURRENT_TIMESTAMP);
