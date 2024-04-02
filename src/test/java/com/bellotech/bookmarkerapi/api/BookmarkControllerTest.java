@@ -2,22 +2,27 @@ package com.bellotech.bookmarkerapi.api;
 
 import com.bellotech.bookmarkerapi.domain.Bookmark;
 import com.bellotech.bookmarkerapi.domain.BookmarkRepository;
+import net.bytebuddy.matcher.ElementMatchers;
 import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.testcontainers.shaded.org.hamcrest.Matchers;
 
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.testcontainers.shaded.org.hamcrest.CoreMatchers.notNullValue;
+
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
@@ -65,4 +70,23 @@ bookmarkRepository.saveAll(bookmarks);
 
 
 }
+
+//@Test
+//    void shouldCreatedBookmarkSuccessfully() throws Exception{
+//
+//    this.mockMvc.perform(
+//            post("/api/bookmarks")
+//                    .contentType(MediaType.APPLICATION_ATOM_XML)
+//                    .contextPath("""
+//                            {
+//                            "title": "Bellotech Blog",
+//                            "url": "https://bellotech.org"
+//                            }
+//                            """)
+//    )
+//            .andExpect(status().isCreated())
+//            .andExpect(jsonPath("$.id", notNullValue()))
+//            .andExpect(jsonPath("$.title", is("Bellotech Blog")))
+//            .andExpect(jsonPath("$.url",is("https://bellotech.org")));
+//    }
 }
