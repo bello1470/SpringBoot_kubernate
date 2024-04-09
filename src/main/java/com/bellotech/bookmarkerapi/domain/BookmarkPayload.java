@@ -12,7 +12,7 @@ public class BookmarkPayload {
 
     @NotBlank(message = "title must not be blank")
    private String title;
-    @NotBlank(message = "url must not be empty")
+    @NotBlank(message = "url must not be blank")
    private String url;
 
 }
