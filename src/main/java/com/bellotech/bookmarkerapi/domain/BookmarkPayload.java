@@ -10,7 +10,7 @@ import lombok.Setter;
 
 public class BookmarkPayload {
 
-    @NotBlank(message = "title must not be emppty")
+    @NotBlank(message = "title must not be blank")
    private String title;
     @NotBlank(message = "url must not be empty")
    private String url;
